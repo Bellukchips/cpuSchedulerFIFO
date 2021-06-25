@@ -1,0 +1,19 @@
+.hide {
+    display: none;
+}
+
+#gantt-chart {
+    height: 250px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+#timeline-chart {
+    height: 250px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+#output {
+    margin-top: 20px;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduling Algorithms</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="alert alert-warning" role="alert">
+            <h2 align="center">Penjadwalan CPU (Algoritma FIFO)</h2>
+        </div>
+        <table class="table main-table">
+            <thead>
+                <tr>
+                    <th class="process-id">Process ID</th>
+                    <th class="priority hide">Priority</th>
+                    <th class="arrival-time">Arrival Time</th>
+                    <th class="process-time" colspan="1">Process Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--P1-->
+                <tr>
+                    <td class="process-id" rowspan="2">P1</td>
+                    <td class="priority hide" rowspan="2"><input type="number" min="1" step="1" value="1" class="form-control"></td>
+                    <td class="arrival-time" rowspan="2"><input type="number" min="0" step="1" value="0" class="form-control"> </td>
+                </tr>
+                <tr>
+                    <td class="process-time cpu process-input"><input type="number" min="1" step="1" value="1" class="form-control"> </td>
+                </tr>
+                <!--tutup p1-->
+                <!--P2-->
+                <tr>
+                    <td class="process-id" rowspan="2">P2</td>
+                    <td class="priority hide" rowspan="2"><input type="number" min="1" step="1" value="1" class="form-control"></td>
+                    <td class="arrival-time" rowspan="2"><input type="number" min="0" step="1" value="0" class="form-control"> </td>
+                </tr>
+                <tr>
+                    <td class="process-time cpu process-input"><input type="number" min="1" step="1" value="1" class="form-control"> </td>
+                </tr>
+                <!--tutup p2-->
+                <!--P3-->
+                <tr>
+                    <td class="process-id" rowspan="2">P3</td>
+                    <td class="priority hide" rowspan="2"><input type="number" min="1" step="1" value="1" class="form-control"></td>
+                    <td class="arrival-time" rowspan="2"><input type="number" min="0" step="1" value="0" class="form-control"> </td>
+                </tr>
+                <tr>
+                    <td class="process-time cpu process-input"><input type="number" min="1" step="1" value="1" class="form-control"> </td>
+                </tr>
+                <!--tutup p3-->
+                <!--P4-->
+                <tr>
+                    <td class="process-id" rowspan="2">P4</td>
+                    <td class="priority hide" rowspan="2"><input type="number" min="1" step="1" value="1" class="form-control"></td>
+                    <td class="arrival-time" rowspan="2"><input type="number" min="0" step="1" value="0" class="form-control"> </td>
+                </tr>
+                <tr>
+                    <td class="process-time cpu process-input"><input type="number" min="1" step="1" value="1" class="form-control"> </td>
+                </tr>
+                <!--tutup p4-->
+                <!--P5-->
+                <tr>
+                    <td class="process-id" rowspan="2">P5</td>
+                    <td class="priority hide" rowspan="2"><input type="number" min="1" step="1" value="1" class="form-control"></td>
+                    <td class="arrival-time" rowspan="2"><input type="number" min="0" step="1" value="0" class="form-control"> </td>
+                </tr>
+                <tr>
+                    <td class="process-time cpu process-input"><input type="number" min="1" step="1" value="1" class="form-control"> </td>
+                </tr>
+                <!--tutup p5-->
+                <!--P6-->
+                <tr>
+                    <td class="process-id" rowspan="2">P6</td>
+                    <td class="priority hide" rowspan="2"><input type="number" min="1" step="1" value="1" class="form-control"></td>
+                    <td class="arrival-time" rowspan="2"><input type="number" min="0" step="1" value="0" class="form-control"> </td>
+                </tr>
+                <tr>
+                    <td class="process-time cpu process-input"><input type="number" min="1" step="1" value="1" class="form-control"> </td>
+                </tr>
+                <!--tutup p6-->
+                <!--P7-->
+                <tr>
+                    <td class="process-id" rowspan="2">P7</td>
+                    <td class="priority hide" rowspan="2"><input type="number" min="1" step="1" value="1" class="form-control"></td>
+                    <td class="arrival-time" rowspan="2"><input type="number" min="0" step="1" value="0" class="form-control"> </td>
+                </tr>
+                <tr>
+                    <td class="process-time cpu process-input"><input type="number" min="1" step="1" value="1" class="form-control"> </td>
+                </tr>
+                <!--tutup p7-->
+            </tbody>
+        </table>
+        <div class="card">
+            <div class="card-body">
+                <div class="col">
+                    <label for="">Context Switch Time</label>
+                    <input type="number" class="form-control switchT" value="0" min="0" id="switchT" required>
+                    <div class="col mt-2">
+                        <button type="button" class="btn btn-primary calc" id="calc">Calculate</button>
+                        <button type="reset" class="btn btn-danger " id="reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="result" class="mt-5"></div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/class_bundle.js"></script>
+
+</body>
+
+</html>
